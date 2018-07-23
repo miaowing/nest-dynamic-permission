@@ -4,10 +4,10 @@ import { DynamicPermisson } from './dynamic.permisson';
 @Global()
 @Module({})
 export class PermissionModule {
-  static forRoot(): DynamicModule {
+  static forRoot(controllers: any, service?: string): DynamicModule {
     const permissionProvider = {
       provide: 'DynamicPermission',
-      useFactory: (controllers: any, service?: string): DynamicPermisson => {
+      useFactory: (): DynamicPermisson => {
         return new DynamicPermisson(controllers, service);
       },
       inject: ['DynamicPermission'],
