@@ -1,6 +1,6 @@
 {
   "name": "nest-dynamic-permission",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Nest - modern, fast, powerful node.js web framework (@feign)",
   "author": "Miaowing <i@zfeng.net>",
   "license": "MIT",
@@ -21,6 +21,7 @@
     "@types/node": "^7.0.41",
     "husky": "^0.14.3",
     "lint-staged": "^7.0.0",
+    "nest-boot": "^0.1.1",
     "prettier": "^1.11.1",
     "ts-node": "^6.0.0",
     "tsconfig-paths": "^3.3.1",
