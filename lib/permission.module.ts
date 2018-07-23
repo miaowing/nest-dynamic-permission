@@ -10,7 +10,6 @@ export class PermissionModule {
       useFactory: (): DynamicPermission => {
         return new DynamicPermission(controllers, service);
       },
-      inject: ['DynamicPermission'],
     };
 
     return {

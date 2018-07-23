@@ -98,7 +98,7 @@ export class DynamicPermission {
     this.routes = routes;
   }
 
-  collect(callback?: (routes: Route[]) => void, interval: number = 5000) {
+  collect(callback?: (routes) => void, interval: number = 5000) {
     this.routes = [];
     for (const key in this.controllers) {
       if (!this.controllers.hasOwnProperty(key)) continue;
@@ -124,13 +124,18 @@ export class DynamicPermission {
       });
     }
     if (callback) {
-      const report = () => {
+      const report = async () => {
         try {
-          callback(this.routes);
+          if (callback instanceof Promise) {
+            await callback(this.routes);
+          } else {
+            callback(this.routes);
+          }
         } catch (e) {
           setTimeout(() => report(), interval);
         }
       };
+      report();
     }
   }
 
