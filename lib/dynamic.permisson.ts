@@ -126,11 +126,7 @@ export class DynamicPermission {
     if (callback) {
       const report = async () => {
         try {
-          if (callback instanceof Promise) {
-            await callback(this.routes);
-          } else {
-            callback(this.routes);
-          }
+          await callback(this.routes);
         } catch (e) {
           setTimeout(() => report(), interval);
         }

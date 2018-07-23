@@ -66,7 +66,7 @@ export class PermissionService implements OnModuleInit{
   ) {}
   
   onModuleInit(): any {
-      this.permission.collect(routes => {
+      this.permission.collect(async routes => {
           // You can save routes data to db.
       }, 5000);
   }
