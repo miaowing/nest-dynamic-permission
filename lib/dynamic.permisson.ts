@@ -5,7 +5,7 @@ import { Permission } from './permission';
 import * as UrlPattern from 'url-pattern';
 import * as LRU from 'lru-cache';
 
-export class DynamicPermisson {
+export class DynamicPermission {
   private readonly controllers;
   private readonly patternCache = new LRU({ max: 50, maxAge: 1000 * 60 * 30 });
   private readonly permissionCache = new LRU({

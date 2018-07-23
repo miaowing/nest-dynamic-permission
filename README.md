@@ -27,7 +27,7 @@
 
 ## Description
 
-This is a [Nest](https://github.com/nestjs/nest) module for writing nestjs http clients easier.
+This is a [Nest](https://github.com/nestjs/nest) module for making config permission easier.
 
 ## Installation
 
